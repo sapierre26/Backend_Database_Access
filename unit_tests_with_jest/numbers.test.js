@@ -18,8 +18,23 @@ test('div() - resulting in decimal points', () => {
   expect(target).toBe(result);
 });
 
-test('containsNumbers() - normal test', () => {
-  const target = 30;
-  const result = myFunctions.div(120, 4);
+test('containsNumbers() - does not contain numbers', () => {
+  const input_val = "Supercalifragilisticexpialidocious";
+  const target = false;
+  const result = myFunctions.containsNumbers(input_val);
+  expect(target).toBe(result);
+});
+
+test('containsNumbers() - does contain numbers', () => {
+  const input_val = "Sup3rcalifragilistic3xpialidocious";
+  const target = true;
+  const result = myFunctions.containsNumbers(input_val);
+  expect(target).toBe(result);
+});
+
+test('containsNumbers() - empty string', () => {
+  const input_val = "";
+  const target = false;
+  const result = myFunctions.containsNumbers(input_val);
   expect(target).toBe(result);
 });
