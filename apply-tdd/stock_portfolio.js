@@ -28,6 +28,10 @@ class StockPortfolio {
 		}
 		return counter;
 	}
+
+	get_shares(symbol) {
+		return this.num_shares[symbol] || 0;
+	}
 }
 
 module.exports = StockPortfolio;

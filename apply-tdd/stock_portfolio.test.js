@@ -31,3 +31,9 @@ test('2.6 Increment - keep only owned symbols', () => {
         port.make_sale("RBLX", 10);
         expect(port.num_shares["RBLX"]).toBeUndefined();
 });
+
+test('2.7 Increment - existing shares', () => {
+        const port = new StockPortfolio();
+        port.make_purchase("RBLX", 10);
+        expect(port.get_shares("RBLX")).toBe(10);
+});
