@@ -11,9 +11,16 @@ test('2.3 Increment - make a purchase', () => {
         expect(port.num_shares["Stock"]).toBe(35);
 });
 
-test('2.4 Increment - make a purchase', () => {
+test('2.4 Increment - make a sale', () => {
         const port = new StockPortfolio();
         port.make_purchase("Stock", 35);
 	port.make_sale("Stock", 17);
         expect(port.num_shares["Stock"]).toBe(18);
+});
+
+test('2.5 Increment - count unique symbols', () => {
+        const port = new StockPortfolio();
+	port.make_purchase("RBLX", 10);
+        port.make_purchase("GMR", 5);
+        expect(port.count_unique_symbols()).toBe(2);
 });

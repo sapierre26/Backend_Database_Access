@@ -17,6 +17,14 @@ class StockPortfolio {
 	make_sale(symbol, shares) {
 		this.num_shares[symbol] -= shares;
 	}
+
+	count_unique_symbols() {
+		let counter = 0;
+		for (let symbol in this.num_shares) {
+			counter++;
+		}
+		return counter;
+	}
 }
 
 module.exports = StockPortfolio;
