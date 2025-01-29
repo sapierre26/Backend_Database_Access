@@ -16,6 +16,9 @@ class StockPortfolio {
 
 	make_sale(symbol, shares) {
 		this.num_shares[symbol] -= shares;
+		if (this.num_shares[symbol] <= 0) {
+			delete this.num_shares[symbol];
+		}
 	}
 
 	count_unique_symbols() {
