@@ -7,11 +7,15 @@ class StockPortfolio {
 		return this.num_shares.length === 0;
 	}
 
-	buy(symbol, shares) {
+	make_purchase(symbol, shares) {
 		if (!(symbol in this.num_shares)) {
 			this.num_shares[symbol] = 0;
 		}
-		this.num_shares[symbol] += shares
+		this.num_shares[symbol] += shares;
+	}
+
+	make_sale(symbol, shares) {
+		this.num_shares[symbol] -= shares;
 	}
 }
 
